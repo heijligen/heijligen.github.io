@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>A few things I've to remember...</h1>
+
+<p>
+<h3>update APU2 board</h3>
+<code>flashrom -w [image.rom] -p internal</code>
+<br>
+[0]<a href="https://github.com/pcengines/apu2-documentation/blob/master/docs/firmware_flashing.md">https://github.com/pcengines/apu2-documentation/blob/master/docs/firmware_flashing.md</a>
+</p>
+<br>
+<p>
+<h3>openSUSE bootstick for APU2</h3>
+To install openSUSE on APU2 board you've tomodify the installer.
+I've used <a href="https://github.com/cyberorg/live-fat-stick">live-fat-stick</a> to create an bootable usb stick.
+Then mounted the stick and modified <code>btto/syslinux/syslinux.cfg</code><br>
+<code>
+...<br>
+append initrd=initrd-openSUSE-Leap-42.3 isofrom=/dev/disk/by-uuid/[...]/openSUSE-[Version].iso isofrom_device=/dev/disk/by-uuid/[...] isofrom_system=/openSUSE-[Version].iso loader=syslinux splash=silent   quiet showopts textmode=1 console=ttyS0,115200n81 usessh=1 sshpassword="my_password"
+...<br>
+</code>
+<br>
+[0]<a href="https://www.novell.com/support/kb/doc.php?id=7010066">https://www.novell.com/support/kb/doc.php?id=7010066</a><br>
+[1]<a href="https://www.novell.com/support/kb/doc.php?id=7010066">https://www.novell.com/support/kb/doc.php?id=7010066</a>
+</p>
+
+</body>
+</html>
